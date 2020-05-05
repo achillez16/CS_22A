@@ -103,7 +103,7 @@ void processTax() {
         taxResult();
         cout << "Do you want to calculate tax for another income (y/n)?";
         cin >> tax_again;
-        cout << endl << endl;
+        cout << endl;
         if (tax_again == 'y' or tax_again == 'Y'){
             continue;
         }
@@ -166,8 +166,6 @@ Tax Amount: $58114.26
 ------------------------
 Refund: $5242.03
 Do you want to calculate tax for another income (y/n)?n
-
-
 
 Thank you for using my program.
 Process finished with exit code 0
