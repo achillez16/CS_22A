@@ -170,4 +170,31 @@ Do you want to calculate tax for another income (y/n)?n
 Thank you for using my program.
 Process finished with exit code 0
 
+
+Welcome to my tax calculation program.
+--------------------------------------
+Please enter the PIN code: 5678
+
+Lets gather some information on your finances this year.
+Please enter the amount from W2 form: -2123
+Invalid amount. Income cannot be negative.
+Please enter the amount from W2 form: 34235
+Please enter the Interest income: -32423
+Invalid amount. Interest income cannot be negative.
+Please enter the Interest income: 3245
+Please enter the Paid tax amount: 325325235
+Invalid amount. Paid tax cannot be greater than your total income.
+Please enter the Paid tax amount: 3432
+Please enter the amount for deduction: 2123
+Tax Report
+------------------------
+Income: $34235.00
+Interest: $3245.00
+Deduction: $2123.00
+Paid Tax: $3432.00
+Tax Amount: $17678.50
+------------------------
+Refund: $14246.50
+Do you want to calculate tax for another income (y/n)?
+
  */
