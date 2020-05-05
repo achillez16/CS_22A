@@ -1,11 +1,10 @@
-// Please pick one of the following free C++ Integrated Development Environment (IDE) where you can create, compile,
-// run and debug your C++ programs.
-/*
+/* Please pick one of the following free C++ Integrated Development Environment (IDE) where you can create, compile,
+   run and debug your C++ programs.
     Name: Preetesh Barretto
     IDE: CLION
  */
-#include <iostream>
 
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -28,5 +27,4 @@ San Jose
 CA - 94989
 USA
 Age: 33 Weight: 165.7
-
  */
