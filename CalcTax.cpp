@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include<limits>
 
 using namespace std;
 
@@ -13,13 +14,25 @@ const int TAX_RATE2 = 50;
 float income, interest, deduction, paid_tax, tax_amount, final_amount, due, refund;
 bool isDue = false, isRefund = false;
 
+void getTaxInfo();
+void calcTax(float TAX_RATE);
+void taxResult();
+void processTax();
+void nextSteps();
+
 void getTaxInfo() {
     cout << "Lets gather some information on your finances this year.\n";
     while(true) {
         cout << "Please enter the amount from W2 form: ";
         cin >> income;
-        if (income < 0) {
-            cout << "Invalid amount. Income cannot be negative.\n";
+        if (cin.fail()) {
+            cout << "Invalid Input. Amount has to be a number.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        else if (income < 0 or cin.fail()) {
+            cout << "Invalid amount. Income has to be a positive number.\n";
             continue;
         }
         else
@@ -29,7 +42,13 @@ void getTaxInfo() {
     while(true) {
         cout << "Please enter the Interest income: ";
         cin >> interest;
-        if (interest < 0) {
+        if (cin.fail()) {
+            cout << "Invalid Input. Interest income has to be a number.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        else if (interest < 0 or cin.fail()) {
             cout << "Invalid amount. Interest income cannot be negative.\n";
             continue;
         }
@@ -40,11 +59,16 @@ void getTaxInfo() {
     while(true){
         cout << "Please enter the Paid tax amount: ";
         cin >> paid_tax;
-        if (paid_tax > income) {
-            cout << "Invalid amount. Paid tax cannot be greater than your total income.\n";
+        if (cin.fail()) {
+            cout << "Invalid Input. Paid tax has to be a number.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
         }
-        else if (paid_tax < 0){
+        else if (paid_tax > income ) {
+            cout << "Invalid amount. Paid tax cannot be greater than your total income.\n";
+        }
+        else if (paid_tax < 0 or cin.fail()){
             cout << "Invalid amount. Paid tax cannot be negative.\n";
             continue;
         }
@@ -55,7 +79,13 @@ void getTaxInfo() {
     while(true){
         cout << "Please enter the amount for deduction: ";
         cin >> deduction;
-        if (deduction < 0) {
+        if (cin.fail()) {
+            cout << "Invalid Input. Deduction amount has to be a number.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        else if (deduction < 0) {
             cout << "Invalid amount. Deduction cannot be negative.\n";
             continue;
         }
@@ -101,17 +131,24 @@ void processTax() {
         else
             calcTax(TAX_RATE2);
         taxResult();
+        break;
+    }
+}
+
+void nextSteps() {
+    char tax_again;
+    while (true) {
         cout << "Do you want to calculate tax for another income (y/n)?";
         cin >> tax_again;
         cout << endl;
         if (tax_again == 'y' or tax_again == 'Y'){
-            continue;
+            processTax();
         }
         else if (tax_again == 'n' or tax_again == 'N'){
             break;
         }
         else {
-            cout << "Not a valid input, please try again";
+            cout << "Not a valid input, please try again.\n";
             continue;
         }
     }
@@ -129,6 +166,7 @@ int main(){
         cout << endl;
         if (pin == 5678 or pin == 8765) {
             processTax();
+            nextSteps();
             cout << "Thank you for using my program.";
             break;
         }
