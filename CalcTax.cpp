@@ -20,6 +20,7 @@ void taxResult();
 void processTax();
 void nextSteps();
 
+// Gather tax information of the customer.
 void getTaxInfo() {
     cout << "Lets gather some information on your finances this year.\n";
     while(true) {
@@ -94,6 +95,7 @@ void getTaxInfo() {
     }
 }
 
+// Use information provided by the customer to calculate total tax due / refund.
 void calcTax(float TAX_RATE) {
     tax_amount = (income + interest - deduction) * TAX_RATE/100;
     final_amount = (tax_amount - paid_tax);
@@ -107,6 +109,7 @@ void calcTax(float TAX_RATE) {
     }
 }
 
+// Print out the tax calculations.
 void taxResult() {
     cout << "Tax Report\n";
     cout << "------------------------\n";
@@ -135,6 +138,7 @@ void processTax() {
     }
 }
 
+// Function to get user input for next steps after tax results have been provided.
 void nextSteps() {
     char tax_again;
     while (true) {
