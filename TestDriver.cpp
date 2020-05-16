@@ -9,7 +9,7 @@ using namespace std;
 bool hasOnlyABC();
 bool getAnswer();
 void printIndentation();
-int getAverageScore();
+float getAverageScore();
 
 // 1. Write a function named “hasOnlyABC” that accepts a string as a parameter. It
 //returns true if the string contains only ‘A’, ‘B’, ‘C’ characters. It returns false
@@ -69,7 +69,7 @@ bool getAnswer() {
 ////Similarly, if the list is 80, 90, 100, 70, 60, -1, then the average is 80 as 100 and 60 do
 ////not count toward the total.
 
-int getAverageScore(){
+float getAverageScore(){
 
     int highest = INT_MIN, smallest = INT_MAX;
     float sum, number;
@@ -93,11 +93,11 @@ int getAverageScore(){
     if (count < 3)
         return -1;
 
-    cout << "Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << count << endl;
+    cout << "Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << (count-2) << endl;
     average = (sum - highest - smallest) / (count - 2);
 
-    cout << "Skipping Highest & Smallest numbers and calculating the average." << endl;
-    cout << "Average Score is: " << average << endl;
+    cout << "Skipping Highest & Smallest numbers and calculating the average: " << endl;
+    return average;
 }
 
 //4. Write a function named "printIndentation" that accepts a string and an integer for
@@ -129,12 +129,8 @@ void printIndentation() {
 
 int main(){
     cout << boolalpha << hasOnlyABC() << endl;
-    cout << "____________________________________________\n\n";
     cout << boolalpha << getAnswer() << endl;
-    cout << "____________________________________________\n\n";
-    getAverageScore();
-    cout << "____________________________________________\n\n";
+    cout << getAverageScore() << endl;
     printIndentation();
-    cout << "____________________________________________\n\n";
 
 }
