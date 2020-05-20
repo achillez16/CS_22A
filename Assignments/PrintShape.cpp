@@ -27,7 +27,7 @@ int main()
     else if (input == 2) {
         printf("%*c%c%c\n",1,C,C,C);
         printf("%c%*c\n",C,2,C);
-        printf("%c*%c%c\n",1,C,C,C);
+        printf("%*c%c%c\n",1,C,C,C);
     }
 
     else {
