@@ -34,3 +34,27 @@ bool checkYourGrade() {
         }
     }
 }
+
+// OUTPUTS
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/isTheSmallestLast
+//Enter a number: 50
+//Enter a number: 10
+//Enter a number: 40
+//Enter a number: 30
+//Enter a number: 0
+//Smallest number is: 10
+//Is the smallest number last: false
+//
+//Process finished with exit code 0
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/isTheSmallestLast
+//Enter a number: 10
+//Enter a number: 20
+//Enter a number: 50
+//Enter a number: 4
+//Enter a number: 0
+//Smallest number is: 4
+//Is the smallest number last: true
+//
+//Process finished with exit code 0

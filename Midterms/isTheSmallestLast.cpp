@@ -23,9 +23,9 @@ int main() {
 bool isTheSmallestLast(int & smallest) {
     int last;
     int number, count = 0;
-    cout << "Enter a list of numbers: " << endl;
 
     while (true) {
+        cout << "Enter a number: ";
         count += 1;
         cin >> number;
         if ((number == 0) && (count == 1)) {
@@ -43,3 +43,29 @@ bool isTheSmallestLast(int & smallest) {
     }
     return (smallest == last);
 }
+
+// OUTPUT
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/isTheSmallestLast
+//Enter a number: 50
+//Enter a number: 20
+//Enter a number: 90
+//Enter a number: 0
+//Smallest number is: 20
+//Is the smallest number last: false
+
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/isTheSmallestLast
+//Enter a number: 0
+//Smallest number is: 0
+//Is the smallest number last: false
+
+//Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/isTheSmallestLast
+
+//Enter a number: 40
+//Enter a number: 20
+//Enter a number: 50
+//Enter a number: 10
+//Enter a number: 0
+//Smallest number is: 10
+//Is the smallest number last: true

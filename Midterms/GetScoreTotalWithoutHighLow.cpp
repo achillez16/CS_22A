@@ -29,17 +29,14 @@ float GetScoreTotalWithoutHighLow() {
         if (count == 1) {
             highest = number;
             smallest = number;
-            cout << "Highest / smallest: " << highest << smallest << endl;
             sum = number;
             continue;
         }
         else {
             if (number >= highest) {
                 highest = number;
-                cout << "Highest: " << highest << endl;
             } else if (number <= smallest) {
                 smallest = number;
-                cout << "Smallest: " << smallest << endl;
             }
             sum = sum + number;
         }
@@ -48,8 +45,47 @@ float GetScoreTotalWithoutHighLow() {
         cout << "The total is: ";
         return 0;
     }
-    cout << "Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << (count-2) << endl;
+    cout << "Total Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << (count-2) << endl;
     sum = (sum - highest - smallest);
     cout << "The total is: ";
     return sum;
 }
+
+// OUTPUT
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/GetScoreTotalWithoutHighLow
+//Please enter non-negative score: 20
+//Please enter non-negative score: 40
+//Please enter non-negative score: 50
+//Please enter non-negative score: 80
+//Please enter non-negative score: 10
+//Please enter non-negative score: -1
+//Total Sum, Highest, Smallest, Count: 200,80,10,3
+//The total is: 110
+//
+//Process finished with exit code 0
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/GetScoreTotalWithoutHighLow
+// Please enter non-negative score: -1
+//The total is: 0
+//
+//Process finished with exit code 0
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/GetScoreTotalWithoutHighLow
+//Please enter non-negative score: 0
+//Please enter non-negative score: 0
+//Please enter non-negative score: -1
+//The total is: 0
+//
+//Process finished with exit code 0
+
+///Users/preetesh/CLionProjects/CS_22A/cmake-build-debug/GetScoreTotalWithoutHighLow
+//Please enter non-negative score: 0
+//Please enter non-negative score: 10
+//Please enter non-negative score: 40
+//Please enter non-negative score: 50
+//Please enter non-negative score: -1
+//Total Sum, Highest, Smallest, Count: 100,50,0,2
+//The total is: 50
+//
+//Process finished with exit code 0

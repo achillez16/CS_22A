@@ -5,10 +5,6 @@
 using namespace std;
 
 bool areFirstTwoTheSameAsLastTwoChars(string str);
-int checkGradeList(int grades_arr);
-bool isTheSmallestLast();
-bool checkYourGrade();
-int GetScoreTotalWithoutHighLow();
 
 int main() {
 
@@ -33,4 +29,17 @@ bool areFirstTwoTheSameAsLastTwoChars(string str) {
         return false;
 }
 
+// OUTPUTS
+//Enter the string: ABCABV
+//First 2 letters match last 2 ?: false
+//Process finished with exit code 0
 
+//Enter the string: A
+//First 2 letters match last 2 ?: false
+
+//Enter the string: ""
+//First 2 letters match last 2 ?: false
+//Process finished with exit code 0
+
+//Enter the string: ABBAAB
+//First 2 letters match last 2 ?: true
