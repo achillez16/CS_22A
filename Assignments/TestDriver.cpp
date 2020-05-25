@@ -23,7 +23,7 @@ bool hasOnlyABC(){
     cin >> str;
     int length = str.length() ;
     for (int i=0; i<length; i++) {
-        char ch = str.at(i);
+        char ch = str[i];
         if (ch == 'A' or ch == 'B' or ch == 'C')
             continue;
         else {
@@ -71,7 +71,7 @@ bool getAnswer() {
 
 float getAverageScore(){
 
-    int highest = INT_MIN, smallest = INT_MAX;
+    int highest, smallest;
     float sum, number;
     float average;
 
@@ -81,19 +81,29 @@ float getAverageScore(){
         cin >> number;
         if (number < 0) {
             break;
-        } else {
+        }
+        count += 1;
+        if (count == 1) {
+            highest = smallest = number;
+  //          cout << "Highest / smallest: " << highest << smallest << endl;
+            sum = number;
+            continue;
+        }
+        else {
             if (number > highest) {
                 highest = number;
-            } else if (number < smallest)
+  //              cout << "Highest: " << highest << endl;
+            } else if (number < smallest) {
                 smallest = number;
+  //              cout << "Smallest: " << smallest << endl;
+            }
             sum = sum + number;
-            count += 1;
         }
     }
     if (count < 3)
         return -1;
 
-    cout << "Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << (count-2) << endl;
+  //  cout << "Sum, Highest, Smallest, Count: " << sum << "," << highest << "," << smallest << "," << (count-2) << endl;
     average = (sum - highest - smallest) / (count - 2);
 
     cout << "Skipping Highest & Smallest numbers and calculating the average: " << endl;
@@ -128,9 +138,9 @@ void printIndentation() {
 //answer this question.
 
 int main(){
-    cout << boolalpha << hasOnlyABC() << endl;
-    cout << boolalpha << getAnswer() << endl;
+//    cout << boolalpha << hasOnlyABC() << endl;
+//    cout << boolalpha << getAnswer() << endl;
     cout << getAverageScore() << endl;
-    printIndentation();
+//    printIndentation();
 
 }

@@ -26,6 +26,7 @@ int main()
     float invoice_amount = 0;
     int quantity = 0;
 
+
     cout << "Welcome to our store\n";
     cout << "Please enter the item's description: ";
     getline(cin, item_name);
