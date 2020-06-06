@@ -21,6 +21,8 @@ int main() {
     }
 
     cout << fixed << showpoint << setprecision(2);
+    cout << "Cost of the Item: $" << cost << endl;
+    cout << "Mark Up Percentage: $" << markup << endl;
     cout << "Total cost: $" << calculateRetail(cost, markup);
 }
 
