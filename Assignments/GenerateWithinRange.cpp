@@ -13,7 +13,6 @@ using namespace std;
 int main() {
     /* get the current system time and use it as the seed   */
     srand(time(0));    /* retrieve the next random number */
-    int random_num = rand();    /* print it out */
     int total_nums = 0, lower = 0, upper = 0;
 
     while (true) {
@@ -45,7 +44,7 @@ int main() {
 
     int range = (upper - lower) + 1;
     for (int i =0 ; i <= total_nums; i++) {
-        random_num = rand() % range + lower;
+        int random_num = rand() % range + lower;
         cout << "Random number: " << random_num << endl;
     }
 
