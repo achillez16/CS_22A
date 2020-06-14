@@ -13,9 +13,43 @@
 
 #include <iostream>
 using namespace std;
+double medianFunction(int array[], int elements);
+int getValidInput(int input);
+void getArrayElements(int array[], int elements);
+double median;
 
 int main(){
-
-
+    int input = 0;
+    cout << "Enter the number of elements: ";
+    input = getValidInput(input);
+    int *pArray = new int[input];
+    median = medianFunction(pArray, input);
+    cout << "Median of the above series is: " << median;
 }
-int medianFunctio
+
+double medianFunction(int array[], int elements){
+    getArrayElements(array, elements);
+    if(elements % 2 == 0) {
+        median = (*(array + elements/2 -1) + *(array + elements/2))/2;
+    }
+    else {
+        median =  *(array + elements/2);
+    }
+    return median;
+}
+
+int getValidInput(int input){
+    while (!(cin >> input) or input < 0) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please enter a valid option: ";
+    }
+    return input;
+}
+
+void getArrayElements(int array[], int elements){
+    for (int i =0; i < elements; i++) {
+        cout << "Enter element " << i << ": ";
+        cin >> *(array+i);
+    }
+}
